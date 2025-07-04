@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Chat |OOO</title>
+    <!-- Start of Zendesk Widget script -->
+    <script id="ze-snippet" src="https://static.zdassets.com/ekr/snippet.js?key=fcc89030-47cf-485c-9916-165e3da9297e"></script>
+    <!-- End of Zendesk Widget script -->
+</head>
+<body>
+    <script>
+        document.addEventListener('DOMContentLoaded', function(event) {
+    
+            // zE('messenger:set', 'conversationFields', [
+            //     { email: 'john.doe@example.com'}]);
+
+
+            zE('messenger', 'open');
+            console.log('Opened');
+            
+            // Handle widget close event
+            zE('messenger:on', 'close', function() {
+                if (window.FlutterWebView) {
+                    window.FlutterWebView.postMessage('close');
+                    console.log('Closed');
+                }
+            });
+
+        });
+    </script>
+</body>
+</html>
